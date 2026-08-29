@@ -2,6 +2,8 @@
 
 A command-line tool that detects file tampering by comparing SHA-256 hashes 
 of files against a saved baseline.
+This project can be improved more by adding multiple hashes to the baseline.json
+but i have no idea how to implement that yet.
 
 ## How it works
 1. Scans a folder and computes a SHA-256 hash for every file inside it 
