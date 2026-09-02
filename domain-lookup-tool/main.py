@@ -3,17 +3,12 @@ import whois
 import time
 from datetime import datetime
 from datetime import timezone
-#Write a get_dns_records(domain) function that returns A, MX, and NS records for a domain
-#Write a get_whois_info(domain) function that returns registrar, creation date, expiration date
-#Combine both into a single report — print a clean summary for a given domain
-#Add a simple heuristic: flag domains registered very recently (e.g. under 30 days old) as "potentially suspicious" — this is a 
-# real, common phishing indicator
-#rap in a CLI loop like your previous tools, letting the user look up multiple domains
+
 def no_found_domain():
-    print("No found domain for the hostname you entered.")
+    print("No found domain for the hostname you entered.") #A statement to be printed when the domain is not found.
     time.sleep(0.7)
 
-def get_a_record(domain, choice):
+def get_a_record(domain, choice): # A function to get the specified record of a domain.
     try:
         answer = dns.resolver.resolve(domain, choice)
         for a in answer:
@@ -22,7 +17,7 @@ def get_a_record(domain, choice):
         no_found_domain()
         return False
     
-def get_whois_info(domain):
+def get_whois_info(domain): # A function to get the whois information of a domain.
     try:
         info = whois.whois(domain)
         if info.domain_name is None:
@@ -43,7 +38,7 @@ def get_whois_info(domain):
         print(f"Look up failed {e}")
     
 
-def check_gap_domain(domain, creation, thresh_hold=30):
+def check_gap_domain(domain, creation, thresh_hold=30): # A function to check the gap between the current date and the creation date of a domain.
     since_created = (datetime.now(timezone.utc) - creation).days
     if since_created < thresh_hold:
         print("Domain created recently!\nPotentially a phishing website!")  

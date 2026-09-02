@@ -1,0 +1,12 @@
+# Python general
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Project-specific generated files
+file-integrity-checker/baseline.json
+phishing-url-classifier
+
+# Editor
+.vscode/

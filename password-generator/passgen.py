@@ -2,10 +2,8 @@ import string
 import secrets
 from time import sleep
 
-def check_set(sets):
-
+def check_set(sets): # A function to check the character sets selected by the user and return a list of characters based on the selected sets.
     character_set = []
-
     if 'p' in sets:
         character_set += string.punctuation
     if 'd' in sets:
@@ -16,7 +14,7 @@ def check_set(sets):
         character_set += string.ascii_uppercase
     return character_set
 
-def passwd_generate(length, sets):
+def passwd_generate(length, sets): # A function to generate a random password of a specified length using the selected character sets. It uses the secrets module for secure random generation.
     return ''.join(secrets.choice(check_set(sets)) for char in range(length))
 
 if __name__ == '__main__':
@@ -25,8 +23,6 @@ if __name__ == '__main__':
     passwd_length = None
     passwd_csets = None
     password = None
-
-
     while not satisfied:
         if passwd_length is None:
             try:
@@ -63,7 +59,7 @@ if __name__ == '__main__':
                     print("Character already selected")
                     continue
                 else:
-                    temp = list(sets)
+                    temp = list(sets) #A temporary list to store the selected character sets. It is used to convert the tuple 'sets' into a list so that new character sets can be added to it.
                     temp.append(passwd_csets)
                     sets = tuple(temp)
                     print("--Selected Character Sets--")

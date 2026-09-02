@@ -1,0 +1,5 @@
+Strict-Transport-Security (HSTS)	Forces HTTPS, prevents downgrade attacks
+X-Content-Type-Options	Set to nosniff — prevents MIME-type sniffing attacks
+X-Frame-Options	Prevents clickjacking (page being embedded in a malicious iframe)
+Content-Security-Policy	Restricts what scripts/resources a page can load — big defense against XSS
+Server	Not a defense, but revealing this (e.g. "Apache/2.4.41") gives attackers version info to target — often flagged as info disclosure
