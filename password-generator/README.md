@@ -2,6 +2,8 @@
 
 An interactive CLI tool that generates cryptographically secure random 
 passwords from user-selected character sets.
+Also the pass_predictability function can be improved more but i still
+have not worked on that yet.
 
 ## How it works
 1. Asks the user for a desired password length.
