@@ -10,6 +10,7 @@ each one introducing a new core concept.
 | [File Integrity Checker](./file-integrity-checker) | `hashlib`, file I/O, JSON persistence |
 | [Port Scanner](./port-scanner) | `socket`, TCP/IP, threading |
 | [Domain Lookup Tool](./domain-lookup-tool) | DNS resolution, WHOIS|
+| [Header Checker](./header-checker) | `requests` module, checks for security headers|
 
 Each project has its own README with details on how it works and what 
 it taught me.
